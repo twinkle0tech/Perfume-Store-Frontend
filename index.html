@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Keluna Mist - Premium Perfumes</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <link rel="stylesheet" href="./style.css">
+
+
+    <script src="https://cdn.tailwindcss.com"></script>
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+  />
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
+    body {
+      font-family: 'Inter', sans-serif;
+    }
+  </style>
+
+    <style>
+  /* Reset and base styles */
+  * {
+    box-sizing: border-box;
+  }
+
+  body, html {
+    margin: 0;
+    height: 100%;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    overflow-x: hidden;
+  }
+
+  /* Hero slider container covering full viewport */
+  .hero-slider {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+  }
+
+  /* Each slide */
+  .slide {
+    position: absolute;
+    top: 0;
+    left: 100%;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: all 1s ease-in-out;
+    background-size: cover;
+    background-position: center;
+  }
+
+  /* Active slide - visible */
+  .slide.active {
+    left: 0;
+    opacity: 1;
+    z-index: 2;
+  }
+
+  /* Previous slide - to handle transition */
+  .slide.prev {
+    left: -100%;
+    opacity: 0;
+    z-index: 1;
+  }
+
+  /* Navigation dots container */
+  .slider-dots {
+    position: absolute;
+    bottom: 25px;
+    width: 100%;
+    text-align: center;
+    z-index: 3;
+  }
+
+  /* Each dot style */
+  .slider-dots button {
+    border: none;
+    background: rgba(255, 255, 255, 0.5);
+    width: 14px;
+    height: 14px;
+    margin: 0 7px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+
+  .slider-dots button.active {
+    background: white;
+    box-shadow: 0 0 5px white;
+  }
+
+  /* Overlay text on hero */
+  .hero-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    text-align: center;
+    text-shadow: 0 0 10px rgba(0,0,0,0.7);
+    z-index: 4;
+  }
+
+  .hero-text h1 {
+    font-size: 3.5rem;
+    margin: 0 0 10px;
+  }
+
+  .hero-text p {
+    font-size: 1.5rem;
+    margin: 0;
+  }
+
+  /* Responsive adjustments */
+  @media (max-width: 768px) {
+    .hero-text h1 {
+      font-size: 2.5rem;
+    }
+    .hero-text p {
+      font-size: 1rem;
+    }
+  }
+
+ 
+</style>
+
+</head>
+<body>
+    <!-- Header -->
+    <header class="sticky-header">
+        <div class="logo">Keluna Mist</div>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="#about">About</a></li>
+                <li><a href="#products">Products</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li class="nav-cart">
+                    <a href="#cart" id="cart-link" class="fa-solid fa-cart-shopping">
+                        <span id="cart-count">0</span>
+                    </a>
+                </li>
+            </ul>
+            <div class="hamburger">
+                <i class="fas fa-bars"></i>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Discover Your Signature Scent</h1>
+            <p>A scent that whispers your story gracefully, leaving a trail of timeless elegance.</p>
+            <button class="cta-button" onclick="scrollToProducts()">Explore Now</button>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="about-container">
+            <div class="about-image">
+                <img src="./about-img.jpg" alt="Keluna Mist Perfume">
+            </div>
+            <div class="about-content">
+                <h2>Experience Keluna Mist</h2>
+                <p>Keluna Mist is a haven for perfume enthusiasts, where every bottle tells a unique olfactory story. Our commitment to excellence and passion for perfumery drive us to curate an exceptional collection that celebrates artistry and individuality.</p>
+                <p>Immerse yourself in the world of fine fragrances and elevate your sensory journey.</p>
+                <button class="cta-button" onclick="scrollToProducts()">Discover More</button>
+                <div class="tagline-box">
+                        <p>"Elegance is remembering what to forget and choosing what to remember."</p>
+                    </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+
+    
+    <section id="products" class="products">
+        <h2>Our Collections</h2>
+        <div class="product-grid">
+            <!-- Product 1 -->
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="perfume1.png" alt="Floral Elegance">
+                </div>
+                <div class="product-info">
+                    <h3>Floral Elegance</h3>
+                    <p class="price">$59.99</p>
+                    <div class="product-buttons">
+                        <button class="view-details" onclick="window.location.href='product-details.html?id=1'">View Details</button>
+                        <button class="add-to-cart" data-id="1" data-name="Floral Elegance" data-price="59.99">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Product 2 -->
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="perfume2.png" alt="Woody Mystique">
+                </div>
+                <div class="product-info">
+                    <h3>Woody Mystique</h3>
+                    <p class="price">$69.99</p>
+                    <div class="product-buttons">
+                        <button class="view-details" onclick="window.location.href='product-details.html?id=2'">View Details</button>
+                        <button class="add-to-cart" data-id="2" data-name="Woody Mystique" data-price="69.99">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Product 3 -->
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="perfume3.png" alt="Citrus Zest">
+                </div>
+                <div class="product-info">
+                    <h3>Citrus Zest</h3>
+                    <p class="price">$49.99</p>
+                    <div class="product-buttons">
+                        <button class="view-details" onclick="window.location.href='product-details.html?id=3'">View Details</button>
+                        <button class="add-to-cart" data-id="3" data-name="Citrus Zest" data-price="49.99">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Product 4 -->
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="perfume4.png" alt="Oriental Dream">
+                </div>
+                <div class="product-info">
+                    <h3>Oriental Dream</h3>
+                    <p class="price">$79.99</p>
+                    <div class="product-buttons">
+                        <button class="view-details" onclick="window.location.href='product-details.html?id=4'">View Details</button>
+                        <button class="add-to-cart" data-id="4" data-name="Oriental Dream" data-price="79.99">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <div id="testimonials" class="bg-[#f9f5f9] text-[#1f3a3a] min-h-screen flex flex-col items-center py-10 px-4">
+        <div class="w-full max-w-[1200px]">
+            <h2 class="text-3xl mb-8">Customers Say About Us</h2>
+            
+            <!-- Previous Reviews -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
+                <div class="border border-[#1f3a3a] rounded-lg p-5 bg-[#A7C98F]">
+                    <div class="text-[#ff6600] mb-2">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    </div>
+                    <div class="text-sm mb-2 font-semibold">
+                        Floral Elegance
+                    </div>
+                    <p class="text-sm mb-4 leading-relaxed">
+                        I wasn't sure at first if Keluna Mist was for me, but I ended up really liking it. It's subtle, clean, and not too 'girly', which I appreciate as someone who prefers more neutral scents. I borrowed it from my sister once and got compliments all day so I ordered my own bottle! The only reason I gave 4 stars is because I wish it lasted just a little longer, but overall, amazing value and presentation.
+                    </p>
+                    <div class="flex justify-between text-xs font-semibold">
+                        <span>Max H.</span>
+                        <span>Verified Buyer <i class="fas fa-check-circle"></i></span>
+                    </div>
+                </div>
+
+                <div class="border border-[#1f3a3a] rounded-lg p-5 bg-[#A7C98F]">
+                    <div class="text-[#ff6600] mb-2">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    </div>
+                    <div class="text-sm mb-2 font-semibold">
+                        Woody Mystique
+                    </div>
+                    <p class="text-sm mb-4 leading-relaxed">
+                        Keluna Mist feels like walking through a blooming garden right after the rain. It's soft, fresh, and so feminine. I love how it lifts my mood instantly. What I adore most is how the scent evolves it starts floral, then settles into this warm, cozy undertone. Plus, the packaging is so classy! I've already gifted it to two of my friends. Definitely a new favorite in my collection!
+                    </p>
+                    <div class="flex justify-between text-xs font-semibold">
+                        <span>Philip F.</span>
+                        <span>Verified Buyer <i class="fas fa-check-circle"></i></span>
+                    </div>
+                </div>
+
+                <div class="border border-[#1f3a3a] rounded-lg p-5 bg-[#A7C98F]">
+                    <div class="text-[#ff6600] mb-2">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    </div>
+                    <div class="text-sm mb-2 font-semibold">
+                        Oriental Dream
+                    </div>
+                    <p class="text-sm mb-4 leading-relaxed">
+                        Keluna Mist is honestly one of the most enchanting perfumes I've ever tried. The scent is a perfect balance of floral and woody notes not too strong, but lingers beautifully throughout the day. Every time I wear it, people ask me what perfume I'm using. The bottle is so elegant, it looks stunning on my dresser. It gives a luxurious vibe without being overpowering. This is my go-to fragrance for both everyday wear and special occasions. I'm totally in love!
+                    </p>
+                    <div class="flex justify-between text-xs font-semibold">
+                        <span>Roselle E.</span>
+                        <span>Verified Buyer <i class="fas fa-check-circle"></i></span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- New Reviews Section -->
+            <div class="mt-8">
+                <div class="flex justify-between items-center mb-6">
+                    <h3 class="text-2xl">Recent Customer Reviews</h3>
+                    <a href="submit-review.html" class="bg-[#5d7b3e] text-white px-6 py-2 rounded-md hover:bg-[#508343] transition-colors">
+                        Write a Review
+                    </a>
+                </div>
+                <div id="reviewsList" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <!-- Dynamic reviews will be loaded here -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="contact-container">
+            <div class="contact-header">
+                <i class="fas fa-envelope-open-text"></i>
+                <h2>Contact Us</h2>
+                <p>We'd love to hear from you. Send us a message and we'll respond as soon as possible.</p>
+            </div>
+
+            <div class="contact-content">
+                <div class="contact-info">
+                    <div class="info-item">
+                        <i class="fas fa-envelope"></i>
+                        <div>
+                            <h3>Email</h3>
+                            <p>contact@kelunamist.com</p>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-phone-alt"></i>
+                        <div>
+                            <h3>Phone</h3>
+                            <p>+91 6294702474</p>
+                            <p>+91 07578000505</p>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div>
+                            <h3>Location</h3>
+                            <p>Guwahati,Assam Downtown university</p>
+                        </div>
+                    </div>
+                </div>
+
+                <form action="https://formspree.io/f/xeogyzvr" method="POST" class="contact-form" id="contactForm">
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input type="text" id="name" name="name" required placeholder="Your name">
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" required placeholder="Your email">
+                    </div>
+                    <div class="form-group">
+                        <label for="subject">Subject</label>
+                        <input type="text" id="subject" name="subject" required placeholder="Message subject">
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" name="message" required placeholder="Your message"></textarea>
+                    </div>
+                    <button type="submit" class="submit-btn">
+                        <span>Send Message</span>
+                        <i class="fas fa-paper-plane"></i>
+                    </button>
+                </form>
+            </div>
+
+            <div class="social-links">
+                <a href="https://linkedin.com/in/muskan-tamang-04bbb1328/" title="linkedin">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                
+                <a href="https://www.instagram.com/___twinkle8250.___/" title="instagram">
+                    <i class="fab fa-pinterest"></i>
+                </a>
+                <a href="https://github.com/twinkle0tech" title="GitHub">
+                    <i class="fab fa-github"></i>
+                </a>
+                
+            </div>
+        </div>
+    </section>
+
+<div class="cart-overlay"></div>
+
+    <!-- Add this anywhere you want the progress bar to appear -->
+<section class="progress-section">
+    <h2>Your Progress</h2>
+    <div class="progress-container">
+        <div class="progress-bar" id="progressBar"></div>
+        <span id="progressText">0%</span>
+    </div>
+    <div class="progress-controls">
+        <!-- Reset button will be added by JavaScript -->
+    </div>
+</section>
+
+
+
+
+
+
+    <!-- Footer -->
+    <footer>
+        <p>© 2025 by Muskan | All Rights Reserved</p>
+    </footer>
+
+    <!-- Cart Sidebar -->
+    <div class="cart-sidebar">
+        <div class="cart-header">
+            <h3>Your Shopping Cart</h3>
+            <button class="close-cart">&times;</button>
+        </div>
+        <div class="cart-items">
+            <!-- Cart items will be added here by JavaScript -->
+        </div>
+        <div class="cart-summary">
+            <div class="cart-totals">
+                <div class="subtotal">
+                    <span>Subtotal</span>
+                    <span id="cart-subtotal">$0.00</span>
+                </div>
+                <div class="total">
+                    <span>Total</span>
+                    <span id="cart-total">$0.00</span>
+                </div>
+            </div>
+            <button class="checkout-btn">Proceed to Checkout</button>
+        </div>
+    </div>
+    
+
+    <script src="./script.js"></script>
+
+    <!-- Reviews Section -->
+    
+</body>
+</html>

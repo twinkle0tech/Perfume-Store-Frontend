@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Submit Review - Keluna Mist</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <link rel="stylesheet" href="./style.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+    <!-- Header -->
+    <header class="sticky-header">
+        <div class="logo">
+            <a href="index.html">Keluna Mist</a>
+        </div>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="index.html#about">About</a></li>
+                <li><a href="index.html#products">Products</a></li>
+                <li><a href="submit-review.html" class="active">Review</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
+            </ul>
+            <div class="hamburger">
+                <i class="fas fa-bars"></i>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Review Submission Section -->
+    <section class="review-submission">
+        <div class="review-submission-container">
+            <div class="review-header">
+                <i class="fas fa-star"></i>
+                <h2>Write a Review</h2>
+                <p>Share your experience with our products</p>
+            </div>
+
+            <div class="review-form-wrapper">
+                <form id="reviewForm" class="review-form">
+                    <div class="form-group">
+                        <label for="reviewName">Name</label>
+                        <input type="text" id="reviewName" name="name" required placeholder="Your name">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="reviewEmail">Email (optional)</label>
+                        <input type="email" id="reviewEmail" name="email" placeholder="Your email">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="productSelect">Select Product</label>
+                        <select id="productSelect" name="product" required>
+                            <option value="">Choose a product...</option>
+                            <option value="Floral Elegance">Floral Elegance</option>
+                            <option value="Woody Mystique">Woody Mystique</option>
+                            <option value="Citrus Zest">Citrus Zest</option>
+                            <option value="Oriental Dream">Oriental Dream</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Rating</label>
+                        <div class="star-rating">
+                            <i class="fas fa-star" data-rating="1"></i>
+                            <i class="fas fa-star" data-rating="2"></i>
+                            <i class="fas fa-star" data-rating="3"></i>
+                            <i class="fas fa-star" data-rating="4"></i>
+                            <i class="fas fa-star" data-rating="5"></i>
+                        </div>
+                        <input type="hidden" id="reviewRating" name="rating" required value="5">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="reviewMessage">Your Review</label>
+                        <textarea id="reviewMessage" name="message" required placeholder="Share your thoughts about our product"></textarea>
+                    </div>
+                    
+                    <div class="form-actions">
+                        <button type="submit" class="submit-btn">
+                            <span>Submit Review</span>
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                        <a href="index.html#testimonials" class="cancel-btn">Cancel</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>© 2025 by Nisha & Muskan | All Rights Reserved</p>
+    </footer>
+
+    <script src="./review.js"></script>
+</body>
+</html> 

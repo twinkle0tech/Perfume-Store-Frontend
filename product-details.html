@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Details - Keluna Mist</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <link rel="stylesheet" href="./style.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+</head>
+<body>
+    <!-- Header -->
+    <header class="sticky-header">
+        <div class="logo">Keluna Mist</div>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="index.html#about">About</a></li>
+                <li><a href="index.html#products">Products</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
+                <li class="nav-cart">
+                    <a href="#cart" id="cart-link" class="fa-solid fa-cart-shopping">
+                        <span id="cart-count">0</span>
+                    </a>
+                </li>
+            </ul>
+            <div class="hamburger">
+                <i class="fas fa-bars"></i>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Product Details Section -->
+    <section class="product-details">
+        <div class="product-details-container">
+            <div class="back-to-products">
+                <a href="index.html#products" class="back-link">
+                    <i class="fas fa-arrow-left"></i> Back to Products
+                </a>
+            </div>
+            <div class="product-details-content">
+                <div class="product-details-image">
+                    <img id="productImage" src="" alt="Product Image">
+                </div>
+                <div class="product-details-info">
+                    <h1 id="productName"></h1>
+                    <div class="product-rating">
+                        <div class="stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <span>(4.8/5 based on 120 reviews)</span>
+                    </div>
+                    <p id="productDescription" class="description"></p>
+                    <div class="product-features">
+                        <h3>Key Features</h3>
+                        <ul id="productFeatures">
+                            <!-- Features will be added dynamically -->
+                        </ul>
+                    </div>
+                    <div class="product-price">
+                        <span id="productPrice"></span>
+                    </div>
+                    <div class="product-actions">
+                        <button id="addToCartBtn" class="add-to-cart">Add to Cart</button>
+                        <div class="quantity-selector">
+                            <button class="quantity-btn minus">-</button>
+                            <input type="number" value="1" min="1" id="quantity">
+                            <button class="quantity-btn plus">+</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Cart Sidebar -->
+    <div class="cart-sidebar">
+        <div class="cart-header">
+            <h3>Your Shopping Cart</h3>
+            <button class="close-cart">&times;</button>
+        </div>
+        <div class="cart-items">
+            <!-- Cart items will be added here by JavaScript -->
+        </div>
+        <div class="cart-summary">
+            <div class="cart-totals">
+                <div class="subtotal">
+                    <span>Subtotal</span>
+                    <span id="cart-subtotal">$0.00</span>
+                </div>
+                <div class="total">
+                    <span>Total</span>
+                    <span id="cart-total">$0.00</span>
+                </div>
+            </div>
+            <button class="checkout-btn">Proceed to Checkout</button>
+        </div>
+    </div>
+    <div class="cart-overlay"></div>
+
+    <script src="./script.js"></script>
+    <script src="./product-details.js"></script>
+</body>
+</html> 
